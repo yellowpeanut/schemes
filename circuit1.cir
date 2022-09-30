@@ -4,11 +4,11 @@ Version=12.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1366,768
+Screen=1920,1080
 MCAPVersion=12.2.0.5
 Key ID=Demo
-NLCnt=126
-TXCnt=5
+NLCnt=134
+TXCnt=6
 
 [shapedef]
 Name=And5
@@ -101,7 +101,6 @@ Name=Stim8
 Definition=STIM
 Shape=STIM8
 Mask=5123
-Used=1
 Data2=8
 memo=8-Bit Digital Stimulus
 Label Offset=2,49,29,19
@@ -120,7 +119,6 @@ Name=Inverter
 Definition=INV
 Shape=Inv
 Mask=4611
-Used=7
 Data1=1
 memo=Generic Inverter Gate
 Label Offset=12,-6,11,21
@@ -133,7 +131,6 @@ Name=And5
 Definition=AND
 Shape=And5
 Mask=4096
-Used=5
 Data1=5
 memo=5 Input Generic AND Gate
 Label Offset=13,13,-1,12
@@ -150,7 +147,6 @@ Name=Or5
 Definition=OR
 Shape=Or5
 Mask=4096
-Used=1
 Data1=5
 memo=5 Input Generic OR Gate
 Label Offset=14,12,-1,13
@@ -426,7 +422,7 @@ Pxs=136,48,136,112
 Pxs=152,40,152,104
 
 [Wire]
-Pxs=168,40,168,96
+Pxs=168,16,168,24
 
 [Wire]
 Pxs=184,40,184,88
@@ -975,7 +971,7 @@ Pxs=120,40,120,48
 Pxs=200,48,216,48
 
 [Wire]
-Pxs=216,40,216,48
+Pxs=216,24,216,32
 
 [Wire]
 Pxs=184,40,192,40
@@ -983,9 +979,41 @@ Pxs=184,40,192,40
 [Wire]
 Pxs=144,40,152,40
 
+[Wire]
+Pxs=104,40,120,40
+
+[Wire]
+Pxs=144,24,144,40
+
+[Wire]
+Pxs=136,24,144,24
+
+[Wire]
+Pxs=192,24,192,40
+
+[Wire]
+Pxs=216,24,224,24
+
+[Wire]
+Pxs=216,32,216,48
+
+[Wire]
+Pxs=168,24,168,96
+
+[Wire]
+Pxs=664,272,680,272
+
+[Grid Text]
+Text="Y"
+Px=680,272
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
 [Grid Text]
 Text="x1"
-Px=112,32
+Px=216,32
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -993,7 +1021,7 @@ CBorder=None
 
 [Grid Text]
 Text="x2"
-Px=136,32
+Px=192,24
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1001,7 +1029,7 @@ CBorder=None
 
 [Grid Text]
 Text="x3"
-Px=160,32
+Px=168,24
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1009,7 +1037,7 @@ CBorder=None
 
 [Grid Text]
 Text="x4"
-Px=184,32
+Px=136,24
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1017,7 +1045,7 @@ CBorder=None
 
 [Grid Text]
 Text="x5"
-Px=208,32
+Px=104,40
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -1220,7 +1248,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=38,196
+Px=677,270
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1311,11 +1339,11 @@ Search Color=#FFFF00
 Section=0
 Page=1
 Text=
-Text=.define Count8 
-Text= +0ns 00 
-Text= +label=start 
-Text= +100ns Incr By 01 
-Text= +200ns goto start -1 times
+Text=.define Count8
+Text=+0ns 00
+Text=+label=start
+Text=+100ns Incr By 01
+Text=+200ns goto start -1 times
 
 [Text Area]
 Section=0
@@ -1403,7 +1431,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=5
+MonMaxShow=7
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -2048,7 +2076,7 @@ Margin Line=True
 Margin Line Color=#0000FF
 Margin Line Pattern=Dot6
 Margin Line Weight=2
-Margin Text=True
+Margin Text=False
 Margin Arrow=True
 Margin Arrow Color=#FF0000
 Margin Arrow Weight=2
@@ -2248,7 +2276,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TMax=1u
+TMax=4u
 TStart=0
 TStep=0
 NPts=51
@@ -2265,11 +2293,10 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=d(1)
-XRng=1e-6
-YRng=Auto
+YExp=dec(x1,x2,x3,x4,x5)
+XRng=AutoAlways
+YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=2e-7
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -2290,11 +2317,10 @@ Analysis=Transient
 Plt=1
 AliasID=4
 XExp=T
-YExp=d(1)
-XRng=1e-6
-YRng=Auto
+YExp=d(x1)
+XRng=AutoAlways
+YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=2e-7
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -2315,11 +2341,10 @@ Analysis=Transient
 Plt=1
 AliasID=3
 XExp=T
-YExp=d(1)
-XRng=1e-6
-YRng=Auto
+YExp=d(x2)
+XRng=AutoAlways
+YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=2e-7
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -2340,11 +2365,10 @@ Analysis=Transient
 Plt=1
 AliasID=2
 XExp=T
-YExp=d(2)
-XRng=1e-6
-YRng=Auto
+YExp=d(x3)
+XRng=AutoAlways
+YRng=AutoAlways
 Options=LINEARX,LINEARY
-Range Grid X=2e-7
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -2362,11 +2386,64 @@ NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-AliasID=-1
+Plt=1
+AliasID=6
+XExp=T
+YExp=d(x4)
+XRng=AutoAlways
+YRng=AutoAlways
 Options=LINEARX,LINEARY
 Enable=Enable
 Line Color=#008000
 Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=5
+XExp=T
+YExp=d(x5)
+XRng=AutoAlways
+YRng=AutoAlways
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=7
+XExp=T
+YExp=d(Y)
+XRng=AutoAlways
+YRng=AutoAlways
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
 Rainbow=False
 VFmtX=3
 VFmtY=3
